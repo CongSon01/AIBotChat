@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title>
+        Chat voi gau!
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var know = {
+            "Toi khong yeu cau": ":(",
+        };
+        function myHead() {
+            var user = document.getElementById("userBox").value;
+            document.getElementById("me").innerHTML = user;
+            document.getElementById("chatLog").innerHTML = user + "<br>";
+            if (user in know) {
+                document.getElementById("chatLog").innerHTML = know[user] + "<br>";
+            } else {
+                document.getElementById("chatLog").innerHTML = "toi khong hieu <br>";
+            }
+        }
+    </script>
+     <script>
+        $(document).ready(function(){
+          $("#search").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#conversation-list").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".chat-message-list").hide();
+            $("#img").click(function () {
+                $(".chat-message-list").show();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#send").focus(function () {
+                $(this).css("background-color", "#ffffff");
+            });
+            $("#send").blur(function () {
+                $(this).css("background-color", "#eeeeee");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="chat-container">
+        <div id="search-container">
+            <input id="search" type="text" placeholder="Search">
+        </div>
+        <div id="conversation-list">
+            <div class="conversation">
+                <img src="iconrobot.png" alt="Nguoi yeu 1" width="40px" height="40px" />
+                <div class="title-text">
+                    Robbot
+                </div>
+                <div class="created-date">
+                    30/04/2020
+                </div>
+                <div class="conversation-message">
+                    Day la nguoi yeu thu 1
+                </div>
+            </div>
+            <div class="conversation">
+                <img src="avata.jpg" alt="Nguoi yeu 1" width="40px" height="40px" />
+                <div class="title-text">
+                    Nguoi Yeu 2
+                </div>
+                <div class="created-date">
+                    30/04/2020
+                </div>
+                <div class="conversation-message">
+                    Day la nguoi yeu thu 2
+                </div>
+            </div>
+            <div class="conversation">
+                <img src="avata.jpg" alt="Nguoi yeu 1" width="40px" height="40px" />
+                <div class="title-text">
+                    Nguoi Yeu 3
+                </div>
+                <div class="created-date">
+                    30/04/2020
+                </div>
+                <div class="conversation-message">
+                    Day la nguoi yeu thu 3
+                </div>
+            </div>
+            <div class="conversation">
+                <img src="avata.jpg" alt="Nguoi yeu 1" width="40px" height="40px" />
+                <div class="title-text">
+                    Nguoi Yeu 4
+                </div>
+                <div class="created-date">
+                    30/04/2020
+                </div>
+                <div class="conversation-message">
+                    Day la nguoi yeu thu 4
+                </div>
+            </div>
+            <div class="conversation">
+                <img src="avata.jpg" alt="Nguoi yeu 1" width="40px" height="40px" />
+                <div class="title-text">
+                    Nguoi Yeu 5
+                </div>
+                <div class="created-date">
+                    30/04/2020
+                </div>
+                <div class="conversation-message">
+                    Day la nguoi yeu thu 5
+                </div>
+            </div>
+        </div>
+        <div id="new-message-container">
+            <a href="#">+</a>
+        </div>
+        <div id="chat-title">
+            <img src="iconrobot.png" height="30px" width="30px" alt="robot"/>
+            <span>Robbot nhan tin</span>
+        </div>
+        <div class="chat-message-list-dau">
+            <div class="chat-message-list">
+                <div class="message-row other-message">
+                    <div class="message-content">
+                        <img src="iconrobot.png" height="30px" width="30px" alt="Nguoi yeu 1" />
+                        <div class="message-text">
+                            <p id="chatLog"><br></p>
+                        </div>
+                        <div class="message-time">30/04</div>
+                    </div>
+                </div>
+                <div class="message-row you-message">
+                    <div class="message-content">
+                        <div class="message-text">
+                            <p id="me"><br></p>
+                        </div>
+                        <div class="message-time">30/4</div>
+                    </div>
+                </div>
+            </div>
+            <div class="message-row you-message">
+                <div class="message-content">
+                    <div class="message-text">
+                        -.-
+                    </div>
+                    <div class="message-time">30/4</div>
+
+                </div>
+            </div>
+            <div class="message-row other-message">
+                <div class="message-content">
+                    <img src="iconrobot.png" height="30px" width="30px" alt="Nguoi yeu 1" />
+                    <div class="message-text">
+                        8 - 3 -1 = 4 mùa em nhớ anh
+                    </div>
+                    <div class="message-time">30/04</div>
+                </div>
+            </div>
+            <div class="message-row you-message">
+                <div class="message-content">
+                    <div class="message-text">
+                        ỪM!
+                    </div>
+                    <div class="message-time">30/4</div>
+
+                </div>
+            </div>
+            <div class="message-row other-message">
+                <div class="message-content">
+                    <img src="iconrobot.png" height="30px" width="30px" alt="Nguoi yeu 1" />
+                    <div class="message-text">
+                        8 + 3 + 1 = 12 tháng em nhớ anh
+                    </div>
+                    <div class="message-time">30/04</div>
+                </div>
+            </div>
+            <div class="message-row you-message">
+                <div class="message-content">
+                    <div class="message-text">
+                        ừm
+                    </div>
+                    <div class="message-time">30/4</div>
+
+                </div>
+            </div>
+            <div class="message-row other-message">
+                <div class="message-content">
+                    <img src="iconrobot.png" height="30px" width="30px" alt="Nguoi yeu 1" />
+                    <div class="message-text">
+                        8 x 3 x 1 =24h Em nhớ anh
+                    </div>
+                    <div class="message-time">30/04</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="chat-form">
+            <input type="text" id="userBox" placeholder="Nhap tin nhan" />
+            <img id="img" src="send.png" alt="Add Attachment" width="30px" height="30px" onclick="myHead()"></img>
+        </div>
+    </div>
+</body>
+
+</html>
